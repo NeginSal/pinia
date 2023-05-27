@@ -6,9 +6,9 @@
       <h1>Pinia Task</h1>
     </header>
     <!--Task List-->
-    <div>
+    <div class="task-list">
       <div v-for="task in TaskStore.tasks" :key="task.id">
-        <p>{{ task.title }}</p>
+        <TaskDetails :task="task" />
       </div>
     </div>
   </main>
@@ -16,8 +16,11 @@
 
 <script>
 import { useTaskStore } from "./stores/TaskStore";
+import TaskDetails from "./components/TaskDetails.vue";
 
 export default {
+  components: { TaskDetails },
+
   setup() {
     const TaskStore = useTaskStore();
     return { TaskStore };
