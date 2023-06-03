@@ -5,17 +5,16 @@
       <img src="./assets/pinia-logo.svg" alt="pinia logo" />
       <h1>Pinia Task</h1>
     </header>
+    <!--new task form -->
+    <div class="new-task-form">
+      <TaskForm />
+    </div>
 
     <!--filter-->
     <nav class="filter">
       <button @click="filter = 'all'">all</button>
       <button @click="filter = 'favs'">favs</button>
     </nav>
-
-    <!--new task form -->
-    <div class="new-task-form">
-      <TaskForm />
-    </div>
 
     <!--Task List-->
     <div class="task-list" v-if="filter === 'all'">
